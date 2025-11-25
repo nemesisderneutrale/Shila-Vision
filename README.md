@@ -2,6 +2,12 @@
 
 Eine elegante Desktop-Anwendung für automatisches Bild-Tagging mit dem Waifu Diffusion 1.4 Tagger Modell.
 
+![Shila-Vision Screenshot](screenshots/main_window.png)
+*Hauptfenster der Shila-Vision Anwendung*
+
+![Shila-Vision Tagging](screenshots/tagging_example.png)
+*Beispiel: Automatisches Tagging eines Bildes*
+
 ## ✨ Features
 
 - 🖼️ **Drag & Drop**: Ziehen Sie Bilder einfach in die Anwendung
@@ -17,35 +23,36 @@ Eine elegante Desktop-Anwendung für automatisches Bild-Tagging mit dem Waifu Di
 
 ## 📦 Installation
 
-### Option 1: Standalone EXE (Empfohlen)
+### Option 1: Standalone EXE erstellen (Windows)
 
-1. Lade die `Shila-Vision.exe` aus dem `dist/` Ordner herunter
-2. Führe die `.exe` aus - keine Installation nötig!
-3. **Modell**: Wird beim ersten Start automatisch heruntergeladen (siehe [README-Modelle.md](README-Modelle.md))
+1. **EXE selbst erstellen**: Führe `build_exe.bat` aus, um die Standalone-EXE zu erstellen
+   ```bash
+   build_exe.bat
+   ```
+2. Die EXE wird im `dist/` Ordner erstellt
+3. Führe die `Shila-Vision.exe` aus - keine Python-Installation nötig!
+4. **Modell**: Wird beim ersten Start automatisch heruntergeladen (siehe [README-Modelle.md](README-Modelle.md))
+
+**Hinweis**: Die EXE ist ~927MB groß, da sie alle Dependencies enthält (Python Runtime, Qt, ONNX, etc.).
 
 ### Option 2: Von Quellcode
 
-#### 1. Virtual Environment erstellen (Empfohlen)
+#### Windows
 
-**Windows:**
+##### 1. Virtual Environment erstellen (Empfohlen)
+
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
 
-**Linux/Mac:**
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-#### 2. Dependencies installieren
+##### 2. Dependencies installieren
 
 ```bash
 pip install -r requirements.txt
 ```
 
-#### 3. Modell installieren (Optional)
+##### 3. Modell installieren (Optional)
 
 **Einfachste Methode**: Verwende den Download-Manager:
 ```bash
@@ -54,11 +61,69 @@ python download_model.py
 
 Das Modell wird auch automatisch beim ersten Start heruntergeladen. Für weitere Optionen siehe [README-Modelle.md](README-Modelle.md).
 
-#### 4. Anwendung starten
+##### 4. Anwendung starten
 
 ```bash
 python main.py
 ```
+
+#### Linux / WSL (Windows Subsystem for Linux)
+
+##### 1. System-Dependencies installieren
+
+**Ubuntu/Debian:**
+```bash
+sudo apt update
+sudo apt install python3 python3-pip python3-venv
+```
+
+**Fedora/RHEL:**
+```bash
+sudo dnf install python3 python3-pip
+```
+
+##### 2. Virtual Environment erstellen
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+##### 3. Dependencies installieren
+
+```bash
+pip install -r requirements.txt
+```
+
+**Wichtig für Linux/WSL**: Falls GUI-Probleme auftreten, installiere zusätzlich:
+```bash
+# Für WSL: X11-Forwarding einrichten
+# Für Linux: Qt-Dependencies
+sudo apt install libxcb-xinerama0 libxcb-cursor0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-shape0 libxcb-sync1 libxcb-xfixes0 libxcb-xkb1 libxkbcommon-x11-0
+```
+
+##### 4. Modell installieren (Optional)
+
+**Einfachste Methode**: Verwende den Download-Manager:
+```bash
+python3 download_model.py
+```
+
+##### 5. Anwendung starten
+
+**Für Linux (mit Display):**
+```bash
+python3 main.py
+```
+
+**Für WSL (mit X11-Forwarding):**
+```bash
+# Stelle sicher, dass X11-Forwarding aktiviert ist
+export DISPLAY=:0
+python3 main.py
+```
+
+**Hinweis für WSL**: Du benötigst einen X-Server auf Windows (z.B. [VcXsrv](https://sourceforge.net/projects/vcxsrv/) oder [X410](https://x410.dev/)).
 
 ## 🎯 Verwendung
 
