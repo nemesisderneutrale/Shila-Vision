@@ -26,7 +26,9 @@ Eine elegante Desktop-Anwendung für automatisches Bild-Tagging mit dem Waifu Di
 ### Option 2: Von Quellcode
 
 #### 1. Dependencies installieren
-
+python oder py -3.10 -m venv venv
+oder wenn ihr nur schon python 3.10.6 nutzt einfach python -m venv venv
+dann .\venv\Scripts\activate
 ```bash
 pip install -r requirements.txt
 ```
