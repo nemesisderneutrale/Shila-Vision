@@ -12,7 +12,7 @@ Eine elegante Desktop-Anwendung für automatisches Bild-Tagging mit dem Waifu Di
 - 📋 **Kopieren & Export**: Tags als Prompt kopieren oder als Datei speichern
 - 🎨 **Dark Theme**: Modernes, augenschonendes Design mit Lila-Akzenten
 - ⚙️ **Anpassbare Einstellungen**: Threshold, Tag-Filterung, Sortierung
-- ⚡ **CPU-optimiert**: Läuft effizient auf Intel i5-11600K (keine GPU nötig)
+- ⚡ **CPU-optimiert**: Läuft effizient auf CPU (keine GPU nötig)
 - 🚀 **Standalone EXE**: Keine Python-Installation nötig
 
 ## 📦 Installation
@@ -25,15 +25,27 @@ Eine elegante Desktop-Anwendung für automatisches Bild-Tagging mit dem Waifu Di
 
 ### Option 2: Von Quellcode
 
-#### 1. Dependencies installieren
-python oder py -3.10 -m venv venv
-oder wenn ihr nur schon python 3.10.6 nutzt einfach python -m venv venv
-dann .\venv\Scripts\activate
+#### 1. Virtual Environment erstellen (Empfohlen)
+
+**Windows:**
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+**Linux/Mac:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+#### 2. Dependencies installieren
+
 ```bash
 pip install -r requirements.txt
 ```
 
-#### 2. Modell installieren (Optional)
+#### 3. Modell installieren (Optional)
 
 **Einfachste Methode**: Verwende den Download-Manager:
 ```bash
@@ -42,7 +54,7 @@ python download_model.py
 
 Das Modell wird auch automatisch beim ersten Start heruntergeladen. Für weitere Optionen siehe [README-Modelle.md](README-Modelle.md).
 
-#### 3. Anwendung starten
+#### 4. Anwendung starten
 
 ```bash
 python main.py
@@ -77,7 +89,7 @@ python main.py
 - **Tagger 2**: SwinV2-Modell via wdtagger (HuggingFace)
 - **Bildverarbeitung**: OpenCV für verbesserte Preprocessing-Qualität
 - **Python Version**: 3.10.6+
-- **CPU**: Optimiert für Intel i5-11600K (keine dedizierte GPU nötig)
+- **CPU**: Optimiert für CPU-Ausführung (keine dedizierte GPU nötig)
 
 ## 📁 Projektstruktur
 
