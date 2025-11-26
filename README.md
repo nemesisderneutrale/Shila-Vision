@@ -2,7 +2,6 @@
 
 Eine elegante Desktop-Anwendung für automatisches Bild-Tagging mit dem Waifu Diffusion 1.4 Tagger Modell.
 
-![Shila-Vision Hauptansicht](screenshots/main.png)
 
 ## ✨ Features
 
@@ -44,14 +43,12 @@ python main.py
    - Ziehen Sie Bilder per Drag & Drop in den oberen Bereich
    - Oder klicken Sie auf den Bereich, um Dateien auszuwählen
 
-![Tagging in Aktion](screenshots/tagging.png)
 
 2. **Tags anzeigen**: 
    - Die Tags werden automatisch generiert und angezeigt
    - Sie sehen sowohl einzelne Tags mit Konfidenz-Werten als auch den formatierten Prompt
    - Rating-Tags werden separat oben angezeigt
 
-![Fertige Tags](screenshots/result.png)
 
 3. **Tags anpassen**:
    - **Threshold**: Regelt wie viele Tags angezeigt werden (Standard: 0.20)
@@ -116,7 +113,6 @@ Vor dem eigentlichen Tagging analysiert die Anwendung das Bild:
 
 Diese Analyse hilft dem System, bessere Tags zu generieren.
 
-![Thinking Mode Engine](screenshots/thinking.png)
 
 ### Rating-Tags
 Die ersten 4 Tags sind spezielle Rating-Tags:
@@ -176,7 +172,10 @@ Public Domain (ähnlich dem Original WD14 Tagger)
 - **Waifu Diffusion 1.4 Tagger**: Basierend auf dem Modell von SmilingWolf
 - **Bildverarbeitung**: Inspiriert von `stable-diffusion-webui-wd14-tagger`
 - **wdtagger**: Python-Bibliothek für WD14 Tagger Modelle
+Screenshots: 
+---<img width="962" height="1045" alt="shilavision3" src="https://github.com/user-attachments/assets/e476f9b9-9fce-4746-87b3-127985e0d4cf" />
+<img width="750" height="550" alt="shilavision2" src="https://github.com/user-attachments/assets/6799781a-036f-4fef-b5a7-b7a74e11f769" />
+<img width="752" height="547" alt="shilavisio1" src="https://github.com/user-attachments/assets/c5f8ba94-9083-44e0-93e5-bd1e570dbcf2" />
 
----
 
 **Shila-Vision** - Elegantes Bild-Tagging für alle! ✨
